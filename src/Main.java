@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -29,21 +28,11 @@ public class Main {
     private static void getNumberAndDo() {
         int number = in.nextInt();
         switch (number) {
-            case 1:
-                availableBalance();
-                break;
-            case 2:
-                withdrawAmount();
-                break;
-            case 3:
-                depositAmount();
-                break;
-            case 4:
-                viewMiniStatement();
-                break;
-            case 5:
-                exit();
-                break;    
+            case 1 -> availableBalance();
+            case 2 -> withdrawAmount();
+            case 3 -> depositAmount();
+            case 4 -> viewMiniStatement();
+            case 5 -> exit();
         }
     }
 
@@ -101,7 +90,6 @@ public class Main {
         System.out.println("Enter Pin:");
         int pin = in.nextInt();
 
-        if (atm == ATM_NUMBER && pin == PIN) return true;
-        return false;
+        return atm == ATM_NUMBER && pin == PIN;
     }
 }
